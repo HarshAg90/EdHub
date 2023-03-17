@@ -1,0 +1,44 @@
+{
+    "1":{
+        "type":"text_post",
+        "date":"18-03-2023",
+        "topics":["AI","data","CS"],
+        "content":{
+            "heading":"LEARN AI IN 5 Easy steps",
+            "body":"here are 5 easy steps to learn AI in todays world",
+            "ending":"click to learn more"
+        }
+    },
+    "2":{
+        "type":"image_post",
+        "date":"21-03-2023",
+        "topics":["cloud","data","CS"],
+        "content":{
+            "image":"__link to image here__",
+            "heading":"LEARN how to host an application online",
+            "body":"here are 5 easy steps to learn AI in todays world",
+            "ending":"click to learn more"
+        }
+    },
+    "3":{
+        "type":"Youtube embed",
+        "date":"18-03-2023",
+        "topics":["AI","data","CS"],
+        "content":{
+            "Fetch_Code":"__youtube code here__",
+            "heading":"Learn how to not suck at coding",
+            "body":"Random text",
+            "ending":"click to learn more"
+        }
+    },
+    "4":{
+        "type":"text_post",
+        "date":"18-03-2023",
+        "topics":["AI","data","CS"],
+        "content":{
+            "heading":"LEARN AI IN 5 Easy steps",
+            "body":"here are 5 easy steps to learn AI in todays world",
+            "ending":"click to learn more"
+        }
+    }
+}
