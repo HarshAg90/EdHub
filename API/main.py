@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import json
 
 app = Flask(__name__)
 
@@ -74,6 +75,15 @@ def preference_recomendataions():
 
     pass
 
+def fetch_All_feeds():
+    global DB_OBJECT
+
+    with open(DB_FILE, 'r') as f:
+        DB_OBJECT = json.load(f)
+
+    print(DB_OBJECT)
+    return DB_OBJECT
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
