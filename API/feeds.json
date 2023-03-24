@@ -4,10 +4,10 @@
 
         "by_user": "username",
 
-        "edu_Category":{
-            "cource":"B-tech",
-            "semester":"2"
-        },
+        
+        "cource":"B-tech",
+        "semester":"2",
+        
 
         "topics":"AI",
 
@@ -24,7 +24,9 @@
         
         "by_user": "username",
 
-        "edu_Category":"none",
+        "cource":"none",
+        "semester":"none",
+
 
         "topics":"cloud",
 
@@ -43,10 +45,10 @@
         
         "by_user": "username",
 
-        "edu_Category":{
-            "cource":"BCA",
-            "semester":"2"
-        },
+        
+        "cource":"BCA",
+        "semester":"2",
+        
 
         "topics":"AI",
         
@@ -65,8 +67,9 @@
         
         "by_user": "username",
 
-        "edu_Category":"none",
-
+        "cource":"none",
+        "semester":"none",
+        
         "date":"18-03-2023",
 
         "topics":"AI",
