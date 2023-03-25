@@ -11,10 +11,11 @@ DB_FILE = "API/feeds.json"
 DB_OBJECT = {}
 
 All_users = {}
-API_KEYS = {"firebase_auth":"","others":""}
+API_KEYS = {"firebase_auth": "", "others": ""}
+
 
 class user:
-    def __init__(self, email, password, username)  -> None:
+    def __init__(self, email, password, username) -> None:
         self.username = username
         self.email = email
         self.password = password
@@ -23,43 +24,56 @@ class user:
         self.stream = None
         self.interests = []
 
-    def personanl_details(self,college,cources,stream,interests):
+    def personanl_details(self, college, cource, stream, interests):
         self.college = college
-        self.cource = cources
+        self.cource = cource
         self.stream = stream
         self.interests = interests
-        
+
     def get_interest_based_feeds(self):
+        fetch_All_feeds()
         recomended = {}
         remaining = {}
 
         for i in DB_OBJECT:
+            print(i)
             if DB_OBJECT[i]["topics"] in self.interests:
                 recomended[i] = DB_OBJECT[i]
-            elif DB_OBJECT[i]["edu_category"]["cource"] == self.cource:
+            elif DB_OBJECT[i]["cource"] == self.cource:
                 recomended[i] = DB_OBJECT[i]
             else:
-                remaining[i]= DB_OBJECT
-        print(recomended+remaining)
-        return recomended + remaining
+                remaining[i] = DB_OBJECT
+        return dict(**recomended,**remaining)
 
 
 @app.route("/auth_key")
 def get_key():
     return "key"
+
+
 @app.route("/")
 def home():
     return "welcome to EdHub"
+
 
 @app.route('/signup', methods=['POST'])
 def signup():
     data = request.json.get("data")
     print(data)
-    new_user = user(username= data['username'],password= data['password'],email= data['email'])
+    new_user = user(
+        username=data['username'],
+        password=data['password'],
+        email=data['email'])
     All_users[data['username']] = new_user
     print(All_users)
-    return jsonify({'status':"True", "user_details":{"username": new_user.username, "email":new_user.email}})
+    return jsonify({
+        'status': "True",
+        "user_details": {
+            "username": new_user.username,
+            "email": new_user.email}
+    })
     return "nice", 201
+
 
 '''
 {
@@ -72,20 +86,28 @@ def signup():
 '''
 
 
-@app.route('/details_from', methods=['POST'])
+@app.route('/details_form', methods=['POST'])
 def detail_fill():
     data = request.json.get('data')
     current_user = All_users[data["username"]]
-    current_user.personanl_details(college=data["college"],cource = data["cource"], stream=data["Stream"], interests=data["interests"])
-    return jsonify({"status": "True", "message":"Success"})
+    current_user.personanl_details(
+        college=data["college"],
+        cource=data["cource"],
+        stream=data["Stream"],
+        interests=data["interests"]
+    )
+    return jsonify({"status": "True", "message": "Success"})
+
 
 '''
 {
-    "username":"Auth_name",
+	"data":{
+    "username":"harsh",
     "college":"college",
     "cource":"XYZ",
     "Stream":"CS / Business / Science",
     "interests" :["AI","ML"]
+}
 }
 '''
 
@@ -97,10 +119,11 @@ def login():
 
     if All_users[data["username"]]:
         if All_users[data["username"]].password == data["password"]:
-            return "login successfull"
+            return "login successfull", 200
     # get some kind of id from frontend to include in data
-    
+
     pass
+
 
 '''
 {
@@ -112,25 +135,29 @@ def login():
 }
 '''
 
+
 @app.route('/append', methods=['POST'])
 def append_data():
     data = request.json.get('data')
     # add post based on types of posts we decide to have
     return jsonify({'message': 'Data appended to database.'})
 
-#/get_recomendation?username=something
+# get_recomendation?username=harsh
+
+
 @app.route("/get_recomendation")
 def preference_recomendataions():
     username = request.args.get('username')
-    print(username)
+    data = json.dumps(All_users[username].get_interest_based_feeds())
     # do something with the query parameter
     # ...
-    return 'Search results for: {}'.format(username)
+
+    return data
 
 
 @app.route("/letest_feeds")
 def get_all():
-    return DB_OBJECT
+    return fetch_All_feeds()
 
 
 def fetch_All_feeds():
@@ -141,9 +168,8 @@ def fetch_All_feeds():
 
     return DB_OBJECT
 
-#fetch_All_feeds()
+# fetch_All_feeds()
 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=80)
-    
