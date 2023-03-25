@@ -34,8 +34,11 @@ dependencies:
   firebase_core: ^2.8.0
   flutter:
     sdk: flutter
+  flutter_secure_storage: ^8.0.0
   fluttertoast: ^8.2.1
+  font_awesome_flutter: ^10.4.0
   google_nav_bar: ^5.0.6
+  google_sign_in: ^6.0.2
   js: ^0.6.2
 
 dev_dependencies:
@@ -55,6 +58,10 @@ flutter:
   assets:
     - Images/logo.jpg
     - Images/logo1.jpg
+    - Images/logo_no_bg.png
+    - Images/github.png
+    - Images/google.png
+    - Images/apple.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

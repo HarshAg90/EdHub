@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:notes_app/Pages/Loginpage.dart';
 import 'package:notes_app/Screens/Favs.dart';
 import 'package:notes_app/Screens/Feed.dart';
 import 'package:notes_app/Screens/Profile.dart';
 import '../Screens/Search.dart';
-import '../utils/routes.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -16,7 +14,12 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   int _selectedindex = 0;
-  List<Widget> _widgetoptions = <Widget>[feed(), search(), favs(), profile()];
+  final List<Widget> _widgetoptions = <Widget>[
+    feed(),
+    search(),
+    favs(),
+    profile()
+  ];
   void _onItemTap(int index) {
     setState(() {
       _selectedindex = index;
@@ -34,7 +37,7 @@ class _homepageState extends State<homepage> {
           color: Colors.black,
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 17.0, vertical: 8.0),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
             child: GNav(
               backgroundColor: Colors.black,
               color: Colors.white,
@@ -42,15 +45,15 @@ class _homepageState extends State<homepage> {
               gap: 10,
               tabBackgroundColor: Colors.grey.shade800,
               tabBorderRadius: 150,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(17),
               tabs: const [
                 GButton(
                   //Feed button
-                  icon: Icons.feed,
+                  icon: Icons.home_filled,
                   text: "Feed",
                   textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                      fontSize: 16,
                       color: Colors.white),
                   haptic: true,
                   // onPressed: Navigator.pop(feed()),
@@ -63,9 +66,9 @@ class _homepageState extends State<homepage> {
                   // },
                 ),
                 GButton(
-                  //Search button
-                  icon: Icons.search,
-                  text: "Search",
+                  //Favs button
+                  icon: Icons.add_box_rounded,
+                  text: "Upload",
                   textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
@@ -73,9 +76,9 @@ class _homepageState extends State<homepage> {
                   haptic: true,
                 ),
                 GButton(
-                  //Favs button
-                  icon: Icons.favorite_border_rounded,
-                  text: "Favs",
+                  //Search button
+                  icon: Icons.search,
+                  text: "Search",
                   textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,

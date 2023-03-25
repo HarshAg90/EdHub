@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/Pages/Homepage.dart';
-import 'package:notes_app/Pages/Splashscreen.dart';
 import 'package:notes_app/utils/routes.dart';
 import 'package:notes_app/Pages/loginpage.dart';
 import 'package:notes_app/Pages/Registerpage.dart';
@@ -26,12 +25,12 @@ class notes extends StatelessWidget {
       // ),
       initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/": (context) => homepage(),
-        // "/home": (context) => home(),
-        MyRoutes.homeRoute: (context) => homepage(),
+        "/": (context) => const homepage(),
+        "/home": (context) => const homepage(),
+        MyRoutes.homeRoute: (context) => const homepage(),
         // MyRoutes.splash: (context) => splash(),
         MyRoutes.loginRoute: (context) => Loginpage(),
-        MyRoutes.registerRoute: (context) => registerpage(),
+        MyRoutes.registerRoute: (context) => const registerpage(),
       },
     );
   }
