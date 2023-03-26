@@ -1,6 +1,6 @@
 # EdHub
 
-> An opensource project made and maintantained by ___[Harsh Agnihotri](https://github.com/HarshAg90)___ , ___[Amanjot Singh](https://github.com/amanGit010)___, ___[Anas](https://github.com/)___ 
+> An opensource project made and maintantained by ___[Harsh Agnihotri](https://github.com/HarshAg90)___ , ___[Amanjot Singh](https://github.com/amanGit010)___, ___[Anas](https://github.com/Anasdevs)___ 
 
 # To Do
 
