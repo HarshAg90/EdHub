@@ -37,14 +37,14 @@ class _homepageState extends State<homepage> {
           color: Colors.black,
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 6.0),
             child: GNav(
               backgroundColor: Colors.black,
               color: Colors.white,
               activeColor: Colors.white,
               gap: 10,
-              tabBackgroundColor: Colors.grey.shade800,
-              tabBorderRadius: 150,
+              tabBackgroundColor: Colors.grey.shade700,
+              tabBorderRadius: 120,
               padding: const EdgeInsets.all(17),
               tabs: const [
                 GButton(

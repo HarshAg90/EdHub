@@ -1,16 +1,19 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:notes_app/Components/squaretile.dart';
 import 'package:notes_app/Pages/Homepage.dart';
 import 'package:notes_app/Pages/Registerpage.dart';
-import 'package:notes_app/Services/auth_service.dart';
+import 'package:notes_app/Screens/Feed.dart';
 import '../utils/routes.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
 
 class Loginpage extends StatefulWidget {
+  const Loginpage({super.key});
+
   @override
   State<Loginpage> createState() => _LoginpageState();
 }
@@ -68,9 +71,9 @@ class _LoginpageState extends State<Loginpage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Welcome you've been missed!",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
                           color: Colors.white),
@@ -125,7 +128,7 @@ class _LoginpageState extends State<Loginpage> {
                             },
                             // style: const TextStyle(color: Colors.white),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
 
@@ -168,7 +171,7 @@ class _LoginpageState extends State<Loginpage> {
                             },
                             style: const TextStyle(color: Colors.black),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Padding(
@@ -177,7 +180,7 @@ class _LoginpageState extends State<Loginpage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text(
+                                const Text(
                                   'Forgot Password?',
                                   style: TextStyle(
                                     color: Colors.white,
@@ -283,7 +286,22 @@ class _LoginpageState extends State<Loginpage> {
                               //     UserCredential as UserCredential);
                               // Navigate to the homepage
                               Navigator.pushReplacementNamed(context, '/home');
+                              // Navigator.of(context).push(
+                              //   MaterialPageRoute(
+                              //     builder: (context) =>
+                              //         feed(contentD: content, titleD: title),
+                              // ),
+                              // )
                             }
+                            var url =
+                                Uri.parse('http://192.168.1.7/letest_feeds');
+                            var response = await http.get(url);
+                            print('Response status: ${response.statusCode}');
+                            print('Response body: ${response.body}');
+                            var data = jsonDecode(response.body);
+                            print(data["1"]["content"]["heading"]);
+                            String title = data["1"]["content"]["heading"];
+                            String content = data["1"]["content"]["body"];
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
