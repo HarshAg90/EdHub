@@ -282,9 +282,15 @@ class _LoginpageState extends State<Loginpage> {
                                 await _googleSignIn.signIn();
 
                             if (googleUser != null) {
-                              // storeTokenandData(
-                              //     UserCredential as UserCredential);
-                              // Navigate to the homepage
+                              var url =
+                                  Uri.parse('http://192.168.1.7/letest_feeds');
+                              var response = await http.get(url);
+                              print('Response status: ${response.statusCode}');
+                              print('Response body: ${response.body}');
+                              var data = jsonDecode(response.body);
+                              print(data["1"]["content"]["heading"]);
+                              String title = data["1"]["content"]["heading"];
+                              String content = data["1"]["content"]["body"];
                               Navigator.pushReplacementNamed(context, '/home');
                               // Navigator.of(context).push(
                               //   MaterialPageRoute(
@@ -293,15 +299,15 @@ class _LoginpageState extends State<Loginpage> {
                               // ),
                               // )
                             }
-                            var url =
-                                Uri.parse('http://192.168.1.7/letest_feeds');
-                            var response = await http.get(url);
-                            print('Response status: ${response.statusCode}');
-                            print('Response body: ${response.body}');
-                            var data = jsonDecode(response.body);
-                            print(data["1"]["content"]["heading"]);
-                            String title = data["1"]["content"]["heading"];
-                            String content = data["1"]["content"]["body"];
+                            // var url =
+                            //     Uri.parse('http://192.168.1.7/letest_feeds');
+                            // var response = await http.get(url);
+                            // print('Response status: ${response.statusCode}');
+                            // print('Response body: ${response.body}');
+                            // var data = jsonDecode(response.body);
+                            // print(data["1"]["content"]["heading"]);
+                            // String title = data["1"]["content"]["heading"];
+                            // String content = data["1"]["content"]["body"];
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
