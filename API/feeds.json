@@ -14,8 +14,8 @@
         "date":"18-03-2023",
 
         "content":{
-            "heading":"LEARN AI IN 5 Easy steps",
-            "body":"here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world,here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world,here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world,here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, here are 5 easy steps to learn AI in todays world, ",
+            "heading":"How to get started with Flutter Development",
+            "body":"We already know there are a lot of frameworks out there that provide the cross-platform functionality then what makes flutter standalone in this rat race? Flutter's hot reload helps you quickly and easily experiment, build UIs, add features, and fix bugs faster. Experience sub-second reload times, without losing state, on emulators, simulators, and hardware for iOS and Android.",
             "ending":"click to learn more"
         }
     },
@@ -34,8 +34,8 @@
 
         "content":{
             "image":"__link to image here__",
-            "heading":"LEARN how to host an application online",
-            "body":"here are 5 easy steps to learn AI in todays world",
+            "heading":"Learn Django",
+            "body":"Django is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience. This tutorial gives a complete understanding of Django.",
             "ending":"click to learn more"
         }
     },
@@ -56,8 +56,8 @@
         
         "content":{
             "Fetch_Code":"__youtube code here__",
-            "heading":"Learn how to not suck at coding",
-            "body":"Random text",
+            "heading":"Learn React Native",
+            "body":"React Native is like React, but it uses native components instead of web components as building blocks. So to understand the basic structure of a React Native app, you need to understand some of the basic React concepts, like JSX, components, state, and props. If you already know React, you still need to learn some React Native specific stuff, like the native components. This tutorial is aimed at all audiences, whether you have React experience or not.",
             "ending":"click to learn more"
         }
     },
@@ -75,8 +75,27 @@
         "topics":"AI",
         
         "content":{
-            "heading":"LEARN AI IN 5 Easy steps",
-            "body":"here are 5 easy steps to learn AI in todays world",
+            "heading":"Learn Vue.js",
+            "body":"Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex.",
+            "ending":"click to learn more"
+        }
+    },
+    "5":{
+        "type":"text_post",
+
+        
+        "by_user": "username",
+
+        "cource":"none",
+        "semester":"none",
+        
+        "date":"18-03-2023",
+
+        "topics":"AI",
+        
+        "content":{
+            "heading":"Roadmap for DevOps",
+            "body":"DevOps is a cultural and collaborative mindset that emphasizes communication, collaboration, integration, and automation between development and operations teams in order to achieve faster and more reliable software delivery. DevOps is not a specific job title or role, but rather a set of practices and principles that can be applied across a variety of roles in software development and IT operations. Anyone involved in the software development and delivery process can adopt a DevOps mindset and apply DevOps practices in their work, including developers, testers, operations engineers, product managers, and others.",
             "ending":"click to learn more"
         }
     }
