@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -49,18 +49,7 @@ function App() {
           <Route path="/about" element={<><Navbar /> <About /></>} />
           <Route path="/faq" element={ <><Navbar /><Faq /></>} />
           <Route path="/contact" element={ <><Navbar /> <Contact /></>} />
-          {/* <Route path="/form" element={<>
-            <MultiStepProgressBar page={page} onPageNumberClick={nextPageNumber} onButtonClick={nextPage} />
-            {
-              {
-                pageone: <PageOne onButtonClick={nextPage} />,
-                pagetwo: <PageTwo onButtonClick={nextPage} />,
-                pagethree: <PageThree onButtonClick={nextPage} />,
-                pagefour: <PageFour />,
-              }[page]
-            }
-            
-          </>} /> */}
+          
     <Route path="/form" element={
   <div className="form-page-container">
     <MultiStepProgressBar page={page} onPageNumberClick={nextPageNumber} onButtonClick={nextPage} />

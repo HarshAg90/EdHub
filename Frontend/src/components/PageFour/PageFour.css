@@ -32,45 +32,6 @@
     letter-spacing: small;
   }
 
-  .dropdown-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-  
-  .dropdown-label {
-    /* margin-bottom: 0.5rem; */
-    color: white;
-  }
-  
-  .dropdown-select {
-    padding: 0.5rem;
-    border-radius: 1rem;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    height: 40px;
-    color: #333;
-    background-color: #fff;
-    cursor: pointer;
-    height: 50px
-  }
-  
-  .dropdown-select:hover {
-    background-color: #f2f2f2;
-
-  }
-  select{
-    height: 32px;
-    border-radius: 0.3rem;
-  }
-
-  .dropdown-select:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-    border-color: #007bff;
-
-  }
-  
   
   @media screen and (max-width: 725px) {
     .dropbtn{

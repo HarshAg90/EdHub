@@ -1,67 +1,105 @@
 import React, {useState} from "react";
 import "./PageThree.css";
 
-const PageThree = ({onButtonClick}) => {
+const PageTwo = ({onButtonClick}) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
 
-  const [singleUser, setSingleUser] = useState(false)
-  
-  const onClickSingleUser = () => {
-    setSingleUser(prevSingleUser => !prevSingleUser)
-  }
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
-  const [multiUser, setMultiUser] = useState(false)
-  
-  const onClickMultiUser = () => {
-    setMultiUser(prevMultiUser => !prevMultiUser)
-  }
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`Name: ${name}, Email: ${email}`);
+  };
     return (
       <main
-        className="pt5 black-80"
-        style={{ maxWidth: "50%", maxHeight: "25%", margin: "auto" }}
+        className="pt5 black-80 center"
+        style={{ maxWidth: "40%", maxHeight: "30%", margin: "auto" }}
       >
-        <h2>How are you planning to use Eden?</h2>
-        <p style={{ color: "#C0C0C0" }}>
-          We'll streamline your setup experience accordingly.
-        </p>
-        <div
-          className="center ph4 selectionDiv"
-          style={{ width: "80%", height: "80%" }}
-        >
-          <div className="mw5 bg-white br3 pa3 mv3 ba dib b--black-10 ma3 clicked"
-            style={{borderColor: singleUser? '#664DE5' : '#EAEEF5' }}
-            onClick={onClickSingleUser} 
-          >
-           
-            <h1 className="f4 pl2 pr2">For myself</h1>
-            <p className="lh-copy f6 black-70 pl2 pr2">
-              Write better. Think more clearly. Stay organized.
-            </p>
-          </div>
-          <div className="mw5 bg-white br3 pa3 mv3 ba dib b--black-10 ma3 clicked"
-           style={{borderColor: multiUser? '#664DE5' : '#EAEEF5' }}
-           onClick={onClickMultiUser}
-            >
-         
-            <h1 className="f4 pl2 pr2">With my team</h1>
-            <p className="lh-copy  f6 black-70 pl2 pr2 desc">
-              Wikis, docs, tasks and projects, all in one place.
-            </p>
-          </div>
+        <div className="page-two">
+        <h2>Some Personal Info</h2>
+        <p style={{ color: "#C0C0C0", textAlign: "center" }}>Please provide us some more info..</p>
         </div>
-        <input
-          className="f6 grow br2 ph3 pv2 mb2 dib white submitButton"
-          style={{
-            borderStyle: "none",
-            width: "66%",
-            backgroundColor: "#664DE5",
-          }}
+       
+        <form style={{ maxWidth: "400px", margin: "0 auto" }} onSubmit={handleSubmit}>
+        <div>
+          <label style={{ display: "block", color:"white" }}>Course:</label>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleNameChange}
+            placeholder={"Enter your Course"}
+            style={{
+              
+              borderRadius: "5px",
+              border: "1px solid #ccc",
+              width: "100%",
+              boxSizing: "border-box",
+            }}
+          />
+        </div>
+        <div>
+          <label style={{ display: "block", color:"white" }}>Year of Studying</label>
+          <input
+            type="number"
+            name="number"
+            value={email}
+            placeholder={"Enter Your Year of Studying"}
+            onChange={handleEmailChange}
+            style={{
+              borderRadius: "5px",
+              border: "1px solid #ccc",
+              width: "100%",
+              boxSizing: "border-box",
+          
+            }}
+          />
+        </div>
+        <div className="dropdown-container">
+      <label htmlFor="options" className="dropdown-label">Choose an option:</label>
+      <select id="options" value={selectedOption} onChange={handleOptionChange}>
+        <option value="">Select an option</option>
+        <option value="AI">AI</option>
+        <option value="ML">ML</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Data Science">Data Science</option>
+        <option value="DSA">DSA</option>
+      </select>
+    </div>
+
+
+        
+        <button
           type="submit"
-          value="Create Workspace"
-          onClick={() => onButtonClick("pagefour")}
-        />
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            padding: "0.8rem",
+            borderRadius: "5px",
+            border: "none",
+            cursor: "pointer",
+            width: "40%",
+            float:"right"
+          } }onClick={() => onButtonClick("pagefour")}
+        >
+          Next
+        </button>
+      </form>
+        
       </main>
     );
 }
 
-export default PageThree;
+export default PageTwo;

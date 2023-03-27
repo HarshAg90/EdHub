@@ -1,6 +1,5 @@
 import React from 'react'
-import { icons } from 'react-icons'
-import {FaGoogle,FaAngleDoubleRight, FaDataba, FaAsterisk, FaAccusoft, FaDatabase} from 'react-icons/fa'
+import {FaGoogle} from 'react-icons/fa'
 import './Hero.css'
 import { Link } from 'react-router-dom';
 import {useState} from 'react';
@@ -25,7 +24,7 @@ const Hero = () => {
         })
         .then(response => response.json())
         .then(data => {
-            if(data.status == 1){
+            if(data.status === 1){
                 status_change(true);
             }
             console.log(data);
@@ -45,7 +44,7 @@ const Hero = () => {
                     <div className='col-1'>
                         <h1><span className='primary-color'>Know Your Goal!</span></h1>
                         <h1>Discover your tech career path with ease</h1>
-                        <p>Get personalized career roadmaps based on your interests.</p>
+                        <p>Get personalized career roadmaps and courses based on your interests.</p>
                         <button className='btn'>
 <Link to='/about'>Know More</Link>
     </button>

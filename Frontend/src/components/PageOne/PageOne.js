@@ -26,11 +26,11 @@ const PageOne = ({ onButtonClick}) => {
     >
       <div className="page-one">
         <h2>Welcome to LearnLog</h2>
-        <p style={{ color: "#C0C0C0" , textAlign: "center" }}>Please provide us some info..</p>
+        <p style={{ color: "#C0C0C0" , textAlign: "center", marginBottom:" 1.3rem" }}>Please provide us some info..</p>
         </div>
         <form style={{ maxWidth: "400px", margin: "0 auto" }} onSubmit={handleSubmit}>
-      <div style={{ marginBottom: "1rem" }}>
-        <label style={{ display: "block", marginBottom: "0.5rem", color:"white" }}>Name:</label>
+      <div>
+        <label style={{ display: "block", color:"white" }}>Name:</label>
         <input
           type="text"
           name="name"
@@ -38,16 +38,16 @@ const PageOne = ({ onButtonClick}) => {
           onChange={handleNameChange}
           placeholder={"Enter your name"}
           style={{
-            padding: "0.5rem",
-            borderRadius: "5px",
+            padding: "0.3rem",
+            borderRadius: "3px",
             border: "1px solid #ccc",
             width: "100%",
             boxSizing: "border-box",
           }}
         />
       </div>
-      <div style={{ marginBottom: "1rem" }}>
-        <label style={{ display: "block", marginBottom: "0.5rem", color:"white" }}>Email:</label>
+      <div>
+        <label style={{ display: "block", color:"white" }}>Email:</label>
         <input
           type="email"
           name="email"
@@ -55,8 +55,8 @@ const PageOne = ({ onButtonClick}) => {
           placeholder={"Enter Your Email"}
           onChange={handleEmailChange}
           style={{
-            padding: "0.5rem",
-            borderRadius: "5px",
+            padding: "0.3rem",
+            borderRadius: "3px",
             border: "1px solid #ccc",
             width: "100%",
             boxSizing: "border-box",
