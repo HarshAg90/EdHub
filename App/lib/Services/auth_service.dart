@@ -5,7 +5,7 @@ import 'package:notes_app/Pages/Homepage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class AuthService {
-  final storage = new FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   signinwithgoogle() async {
     //Opens up the windows for selecting the gmail account

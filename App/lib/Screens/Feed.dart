@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart%20';
 
 // Future<String> fetchData() async {
 //   var url = await Uri.parse('http://192.168.1.7/letest_feeds');
@@ -17,6 +16,8 @@ import 'package:http/http.dart%20';
 // }
 
 class feed extends StatefulWidget {
+  const feed({super.key});
+
   @override
   State<feed> createState() => _feedState();
 }
@@ -130,8 +131,8 @@ class _feedState extends State<feed> {
                     leading: Image.asset(
                       "Images/logo_black.png",
                     ),
-                    title: Text('Learn Log'),
-                    titleTextStyle: TextStyle(
+                    title: const Text('Learn Log'),
+                    titleTextStyle: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -142,15 +143,15 @@ class _feedState extends State<feed> {
                     floating: true,
 
                     bottom: TabBar(
-                      labelStyle:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                      labelStyle: const TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.bold),
                       dividerColor: Colors.black,
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.black,
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(22),
                           color: Colors.black),
-                      tabs: [
+                      tabs: const [
                         // TextStyle(fontSize: 10),
 
                         Tab(
@@ -177,83 +178,7 @@ class _feedState extends State<feed> {
                 body: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 30,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(
-                            () {
-                              isExpanded = !isExpanded;
-                            },
-                          );
-                        },
-                        // _toggleHeight1,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                          child: AnimatedContainer(
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 168, 200, 255),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            duration: Duration(milliseconds: 900),
-                            // color: Colors.amberAccent,
-                            alignment: Alignment.center,
-                            // height: _height1,
-                            height: isExpanded ? 200 : 350,
-                            curve: Curves.easeInOutCubicEmphasized,
-                            // width: 300,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 18, vertical: 20),
-                              child: Column(
-                                children: [
-                                  // Padding(
-                                  //   padding: const EdgeInsets.symmetric(
-                                  //       horizontal: 10, vertical: 20),
-                                  // child:
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          "$title",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  // ),
-                                  Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 6, vertical: 3),
-                                        child: Expanded(
-                                          child: Text(
-                                            "$desc",
-                                            maxLines: isExpanded ? 7 : 100,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       GestureDetector(
@@ -265,68 +190,167 @@ class _feedState extends State<feed> {
                           );
                         },
                         // _toggleHeight1,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                          child: AnimatedContainer(
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 255, 180, 205),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            duration: Duration(milliseconds: 900),
-                            // color: Colors.amberAccent,
-                            alignment: Alignment.center,
-                            // height: _height1,
-                            height: isExpanded1 ? 200 : 350,
-                            curve: Curves.easeInOutCubicEmphasized,
-                            // width: 300,
-                            child: Padding(
+                        child: Column(
+                          children: [
+                            Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 18, vertical: 20),
-                              child: Column(
-                                children: [
-                                  // Padding(
-                                  //   padding: const EdgeInsets.symmetric(
-                                  //       horizontal: 10, vertical: 20),
-                                  // child:
-                                  Row(
+                                  horizontal: 30, vertical: 10),
+                              child: AnimatedContainer(
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 180, 204, 255),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                duration: const Duration(milliseconds: 900),
+                                // color: Colors.amberAccent,
+                                alignment: Alignment.center,
+                                // height: _height1,
+                                height: isExpanded1 ? 200 : 350,
+                                curve: Curves.easeInOutCubicEmphasized,
+                                // width: 300,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 18, vertical: 20),
+                                  child: Column(
                                     children: [
-                                      Expanded(
-                                        child: Text(
-                                          "$title1",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  // ),
-                                  Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 6, vertical: 3),
-                                        child: Expanded(
-                                          child: Text(
-                                            "$desc1",
-                                            maxLines: isExpanded1 ? 7 : 100,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 16,
+                                      // Padding(
+                                      //   padding: const EdgeInsets.symmetric(
+                                      //       horizontal: 10, vertical: 20),
+                                      // child:
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "$title1",
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22),
                                             ),
                                           ),
-                                        ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      // ),
+                                      Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 6, vertical: 3),
+                                            child: Flex(
+                                              direction: Axis.horizontal,
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    "$desc1",
+                                                    maxLines:
+                                                        isExpanded1 ? 7 : 100,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: const TextStyle(
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(
+                            () {
+                              isExpanded1 = !isExpanded1;
+                            },
+                          );
+                        },
+                        // _toggleHeight1,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 10),
+                              child: AnimatedContainer(
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(255, 255, 180, 205),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                duration: const Duration(milliseconds: 900),
+                                // color: Colors.amberAccent,
+                                alignment: Alignment.center,
+                                // height: _height1,
+                                height: isExpanded1 ? 200 : 350,
+                                curve: Curves.easeInOutCubicEmphasized,
+                                // width: 300,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 18, vertical: 20),
+                                  child: Column(
+                                    children: [
+                                      // Padding(
+                                      //   padding: const EdgeInsets.symmetric(
+                                      //       horizontal: 10, vertical: 20),
+                                      // child:
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "$title1",
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      // ),
+                                      Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 6, vertical: 3),
+                                            child: Flex(
+                                              direction: Axis.horizontal,
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    "$desc1",
+                                                    maxLines:
+                                                        isExpanded1 ? 7 : 100,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: const TextStyle(
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       // GestureDetector(
@@ -349,7 +373,7 @@ class _feedState extends State<feed> {
                       //     ),
                       //   ),
                       // ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       GestureDetector(
@@ -361,71 +385,83 @@ class _feedState extends State<feed> {
                           );
                         },
                         // _toggleHeight1,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                          child: AnimatedContainer(
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 229, 255, 200),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            duration: Duration(milliseconds: 900),
-                            // color: Colors.amberAccent,
-                            alignment: Alignment.center,
-                            // height: _height1,
-                            height: isExpanded2 ? 200 : 350,
-                            curve: Curves.easeInOutCubicEmphasized,
-                            // width: 300,
-                            child: Padding(
+                        child: Column(
+                          children: [
+                            Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 18, vertical: 20),
-                              child: Column(
-                                children: [
-                                  // Padding(
-                                  //   padding: const EdgeInsets.symmetric(
-                                  //       horizontal: 10, vertical: 20),
-                                  // child:
-                                  Row(
+                                  horizontal: 30, vertical: 10),
+                              child: AnimatedContainer(
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(255, 229, 255, 200),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                duration: const Duration(milliseconds: 900),
+                                // color: Colors.amberAccent,
+                                alignment: Alignment.center,
+                                // height: _height1,
+                                height: isExpanded2 ? 200 : 350,
+                                curve: Curves.easeInOutCubicEmphasized,
+                                // width: 300,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 18, vertical: 20),
+                                  child: Column(
                                     children: [
-                                      Expanded(
-                                        child: Text(
-                                          "$title2",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  // ),
-                                  Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 6, vertical: 3),
-                                        child: Expanded(
-                                          child: Text(
-                                            "$desc2",
-                                            maxLines: isExpanded2 ? 7 : 100,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 16,
+                                      // Padding(
+                                      //   padding: const EdgeInsets.symmetric(
+                                      //       horizontal: 10, vertical: 20),
+                                      // child:
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "$title2",
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22),
                                             ),
                                           ),
-                                        ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      // ),
+                                      Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 6, vertical: 3),
+                                            child: Flex(
+                                              direction: Axis.horizontal,
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    "$desc2",
+                                                    maxLines:
+                                                        isExpanded2 ? 7 : 100,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: const TextStyle(
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       GestureDetector(
@@ -438,14 +474,14 @@ class _feedState extends State<feed> {
                         },
                         // _toggleHeight1,
                         child: Padding(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 30, vertical: 10),
                           child: AnimatedContainer(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 191, 255, 216),
+                              color: const Color.fromARGB(255, 191, 255, 216),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            duration: Duration(milliseconds: 900),
+                            duration: const Duration(milliseconds: 900),
                             // color: Colors.amberAccent,
                             alignment: Alignment.center,
                             // height: _height1,
@@ -466,33 +502,38 @@ class _feedState extends State<feed> {
                                       Expanded(
                                         child: Text(
                                           "$title3",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 22),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   // ),
                                   Column(
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 6, vertical: 3),
-                                        child: Expanded(
-                                          child: Text(
-                                            "$desc3",
-                                            maxLines: isExpanded3 ? 7 : 100,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontSize: 16,
+                                      Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 6, vertical: 3),
+                                            child: Expanded(
+                                              child: Text(
+                                                "$desc3",
+                                                maxLines: isExpanded3 ? 7 : 100,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
+                                        ],
                                       ),
+                                      // ),
                                     ],
                                   ),
                                 ],
