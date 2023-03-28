@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.notes_app-merged_res-18:/mipmap-xxhdpi_logo.png.flat",
+        "source": "com.example.notes_app-main-11:/mipmap-xxhdpi/logo.png"
+    },
+    {
+        "merged": "com.example.notes_app-merged_res-18:/mipmap-hdpi_logo.png.flat",
+        "source": "com.example.notes_app-main-11:/mipmap-hdpi/logo.png"
+    },
+    {
+        "merged": "com.example.notes_app-merged_res-18:/mipmap-mdpi_logo.png.flat",
+        "source": "com.example.notes_app-main-11:/mipmap-mdpi/logo.png"
+    },
+    {
+        "merged": "com.example.notes_app-merged_res-18:/mipmap-xhdpi_logo.png.flat",
+        "source": "com.example.notes_app-main-11:/mipmap-xhdpi/logo.png"
+    },
+    {
+        "merged": "com.example.notes_app-merged_res-18:/mipmap-xxxhdpi_logo.png.flat",
+        "source": "com.example.notes_app-main-11:/mipmap-xxxhdpi/logo.png"
+    },
+    {
+        "merged": "com.example.notes_app-merged_res-18:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.notes_app-main-11:/drawable-v21/launch_background.xml"
+    }
+]
