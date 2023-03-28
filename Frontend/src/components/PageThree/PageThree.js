@@ -42,7 +42,6 @@ const PageTwo = ({onButtonClick}) => {
             onChange={handleNameChange}
             placeholder={"Enter your Course"}
             style={{
-              
               borderRadius: "5px",
               border: "1px solid #ccc",
               width: "100%",
@@ -68,7 +67,7 @@ const PageTwo = ({onButtonClick}) => {
           />
         </div>
         <div className="dropdown-container">
-      <label htmlFor="options" className="dropdown-label">Choose an option:</label>
+      <label htmlFor="options" className="dropdown-label">Select Your Interests</label>
       <select id="options" value={selectedOption} onChange={handleOptionChange}>
         <option value="">Select an option</option>
         <option value="AI">AI</option>
