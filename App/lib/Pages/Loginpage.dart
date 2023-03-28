@@ -283,33 +283,15 @@ class _LoginpageState extends State<Loginpage> {
                                 await _googleSignIn.signIn();
 
                             if (googleUser != null) {
-                              var url =
-                                  Uri.parse('http://192.168.1.7/letest_feeds');
-                              var response = await http.get(url);
-                              // print('Response status: ${response.statusCode}');
-                              // print('Response body: ${response.body}');
-                              var data = jsonDecode(response.body);
-                              // print(data["1"]["content"]["heading"]);
-                              // String title = data["1"]["content"]["heading"];
-                              // String content = data["1"]["content"]["body"];
-                              // ignore: use_build_context_synchronously
                               Navigator.pushReplacementNamed(context, '/home');
                               // Navigator.of(context).push(
                               //   MaterialPageRoute(
-                              //     builder: (context) =>
-                              //         feed(contentD: content, titleD: title),
+                              //     builder: (context) => homepage(),
                               // ),
                               // )
+                            } else {
+                              return null;
                             }
-                            // var url =
-                            //     Uri.parse('http://192.168.1.7/letest_feeds');
-                            // var response = await http.get(url);
-                            // print('Response status: ${response.statusCode}');
-                            // print('Response body: ${response.body}');
-                            // var data = jsonDecode(response.body);
-                            // print(data["1"]["content"]["heading"]);
-                            // String title = data["1"]["content"]["heading"];
-                            // String content = data["1"]["content"]["body"];
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
